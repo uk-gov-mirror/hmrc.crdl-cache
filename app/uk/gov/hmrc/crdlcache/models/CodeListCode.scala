@@ -200,6 +200,12 @@ enum CodeListCode(val code: String, val listType: CodeListType = STANDARD) {
   case CL754 extends CodeListCode("CL754", listType = PD)
   // E200 (CN Code <-> Excise Products Correspondence)
   case E200 extends CodeListCode("E200", listType = CORRESPONDENCE)
+  // HMRCBC36 (Excise Products)
+  case HMRCBC36 extends CodeListCode("HMRCBC36")
+  // HMRCBC37 (CN Codes)
+  case HMRCBC37 extends CodeListCode("HMRCBC37")
+  // HMRCE200 (CN Code <-> Excise Products Correspondence)
+  case HMRCE200 extends CodeListCode("HMRCE200", listType = CORRESPONDENCE)
   // Unknown codelist code
   case Unknown(override val code: String) extends CodeListCode(code)
 }
@@ -298,7 +304,10 @@ object CodeListCode {
       CL750,
       CL752,
       CL754,
-      E200
+      E200,
+      HMRCBC36,
+      HMRCBC37,
+      HMRCE200
     )
 
   private val codes: Map[String, CodeListCode] = values.map(value => value.code -> value).toMap
